@@ -1,0 +1,152 @@
+PS C:\Docker\python-project> ls
+
+
+    Directory: C:\Docker\python-project
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        06-01-2024     17:42             87 Dockerfile
+-a----        06-01-2024     17:41            125 main.py
+
+
+PS C:\Docker\python-project> cd ..
+PS C:\Docker> ls
+
+
+    Directory: C:\Docker
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        06-01-2024     19:07                DockerTest
+da----        06-01-2024     17:48                docker_Coman
+                                                  nds
+d-----        06-01-2024     16:45                java-project
+d-----        06-01-2024     17:41                python-proje
+                                                  ct
+d-----        06-01-2024     14:39                ubuntu-image
+                                                  s
+-a----        06-01-2024     19:05          70452 DockerTest.z
+                                                  ip
+
+
+PS C:\Docker> mkdir boot-project
+
+
+    Directory: C:\Docker
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        06-01-2024     20:47                boot-project
+
+
+PS C:\Docker> ls
+
+
+    Directory: C:\Docker
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        06-01-2024     20:47                boot-project
+d-----        06-01-2024     19:07                DockerTest
+da----        06-01-2024     17:48                docker_Coman
+                                                  nds
+d-----        06-01-2024     16:45                java-project
+d-----        06-01-2024     17:41                python-proje
+                                                  ct
+d-----        06-01-2024     14:39                ubuntu-image
+                                                  s
+-a----        06-01-2024     19:05          70452 DockerTest.z
+                                                  ip
+
+
+PS C:\Docker> cd boot-project
+PS C:\Docker\boot-project> cd .
+
+New :
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Docker\boot-first-project> code .
+PS C:\Docker\boot-first-project> docker build -t bootfirstimage .
+[+] Building 5.1s (8/8) FINISHED                                                                                      docker:default
+ => [internal] load build definition from Dockerfile                                                                            0.1s
+ => => transferring dockerfile: 162B                                                                                            0.0s
+ => [internal] load .dockerignore                                                                                               0.1s
+ => => transferring context: 2B                                                                                                 0.0s
+ => [internal] load metadata for docker.io/library/openjdk:latest                                                               3.1s
+ => [1/3] FROM docker.io/library/openjdk@sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b3f1f                0.0s
+ => [internal] load build context                                                                                               0.8s
+ => => transferring context: 19.67MB                                                                                            0.7s
+ => CACHED [2/3] WORKDIR /usr/src/myapp                                                                                         0.0s
+ => [3/3] COPY . /usr/src/myapp                                                                                                 0.8s
+ => exporting to image                                                                                                          0.2s
+ => => exporting layers                                                                                                         0.2s
+ => => writing image sha256:e21fdd025df35de65e43ccfba77511a71b036fc9f1b25a3d81a087847ce6495f                                    0.0s
+ => => naming to docker.io/library/bootfirstimage                                                                               0.0s
+
+What's Next?
+  1. Sign in to your Docker account → docker login
+  2. View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Docker\boot-first-project> docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+bootfirstimage   latest    e21fdd025df3   15 seconds ago   490MB
+bootmyimage      latest    5b7cc022d345   6 days ago       490MB
+bootyourimage    latest    5b7cc022d345   6 days ago       490MB
+bootimage        latest    aa69ab74f4a4   6 days ago       489MB
+pythonproject    latest    76d1f962d01b   6 days ago       1.02GB
+myjavaimage      latest    2cde85b8b5c0   7 days ago       654MB
+myubuntuimage    latest    fbbe4d8f8e10   7 days ago       125MB
+mysql            latest    73246731c4b0   3 weeks ago      619MB
+python           latest    fc7a60e86bae   5 weeks ago      1.02GB
+nginx            latest    d453dd892d93   2 months ago     187MB
+httpd            latest    6fd77d7e5eb7   2 months ago     167MB
+hello-world      latest    d2c94e258dcb   8 months ago     13.3kB
+PS C:\Docker\boot-first-project> docker run --name bootFirstProject -it -d bootfirstimage
+a93b991531633820af4f53e538b30134abb20d215757040cb58c84c363343e44
+PS C:\Docker\boot-first-project> docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS      NAMES
+a93b99153163   bootfirstimage   "java -jar DockerTes…"   11 seconds ago   Up 10 seconds   9797/tcp   bootFirstProject
+PS C:\Docker\boot-first-project> docker logs bootFirstProject
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+2024-01-13T11:35:18.305Z  INFO 1 --- [           main] com.docker.test.DockerTestApplication    : Starting DockerTestApplication using Java 18.0.2.1 with PID 1 (/usr/src/myapp/DockerTest-0.0.1-SNAPSHOT.jar started by root in /usr/src/myapp)
+2024-01-13T11:35:18.336Z  INFO 1 --- [           main] com.docker.test.DockerTestApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-01-13T11:35:20.684Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9797 (http)
+2024-01-13T11:35:20.710Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-13T11:35:20.711Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-13T11:35:20.791Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-13T11:35:20.793Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2169 ms
+2024-01-13T11:35:21.596Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9797 (http) with context path ''
+2024-01-13T11:35:21.638Z  INFO 1 --- [           main] com.docker.test.DockerTestApplication    : Started DockerTestApplication in 4.72 seconds (process running for 7.132)
+PS C:\Docker\boot-first-project> docker stop bootFirstProject
+bootFirstProject
+PS C:\Docker\boot-first-project> docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS                       PORTS     NAMES
+a93b99153163   bootfirstimage   "java -jar DockerTes…"   2 minutes ago   Exited (143) 7 seconds ago             bootFirstProject
+eabba72d2b33   bootyourimage    "java -jar DockerTes…"   6 days ago      Exited (1) 6 days ago                  bootYourProject
+5ee32c323a1e   bootimage        "java -jar DockerTes…"   6 days ago      Exited (1) 6 days ago                  bootMyProject
+17cfd7b6698f   bootimage        "java -jar DockerTes…"   6 days ago      Exited (1) 6 days ago                  bootProject
+609a81203ba2   pythonproject    "python3 main.py"        6 days ago      Exited (0) 6 days ago                  pythonProject
+8dc72aab4efa   myjavaimage      "java Test"              7 days ago      Exited (0) 7 days ago                  javaProject
+fe05083c8264   myubuntuimage    "echo 'this is my fi…"   7 days ago      Exited (0) 7 days ago                  myUbuntuContainer
+f3e5cc9535ee   python           "python3"                7 days ago      Exited (137) 7 days ago                pythonContainer
+PS C:\Docker\boot-first-project> docker run --name bootFirstProject2 -it -p 9797:9797 -d bootfirstimage
+b804f89359fd49207f0c35e3613a7af25296bb118320d37bff7d015e5286b0dd
+PS C:\Docker\boot-first-project> docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                    NAMES
+b804f89359fd   bootfirstimage   "java -jar DockerTes…"   9 seconds ago   Up 8 seconds   0.0.0.0:9797->9797/tcp   bootFirstProject2
+PS C:\Docker\boot-first-project>

@@ -1,0 +1,156 @@
+PS C:\Docker\ubuntu-images> docker ps
+CONTAINER ID   IMAGE     COMMAND     CREATED       STATUS             PORTS     NAMES
+f3e5cc9535ee   python    "python3"   2 hours ago   Up About an hour             pythonContainer
+PS C:\Docker\ubuntu-images> docker stop pythonContainer
+pythonContainer
+PS C:\Docker\ubuntu-images> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Docker\ubuntu-images> cd ..
+PS C:\Docker> mkdir java-project
+
+
+    Directory: C:\Docker
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        06-01-2024     15:11                java-project
+
+
+PS C:\Docker> ls
+
+
+    Directory: C:\Docker
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+da----        06-01-2024     15:08                docker_Coman
+                                                  nds
+d-----        06-01-2024     15:11                java-project
+d-----        06-01-2024     14:39                ubuntu-image
+                                                  s
+
+
+PS C:\Docker> cd java-project
+PS C:\Docker\java-project> code .
+PS C:\Docker\java-project> docker build -t myjavaimage .
+[+] Building 0.8s (2/2) FINISHED                docker:default
+ => [internal] load build definition from Dockerfile      0.3s
+ => => transferring dockerfile: 31B                       0.1s
+ => [internal] load .dockerignore                         0.3s
+ => => transferring context: 2B                           0.1s
+ERROR: failed to solve: the Dockerfile cannot be empty
+PS C:\Docker\java-project> docker build -t myjavaimage .
+[+] Building 242.4s (8/8) FINISHED              docker:default
+ => [internal] load build definition from Dockerfile      0.2s
+ => => transferring dockerfile: 154B                      0.1s
+ => [internal] load .dockerignore                         0.1s
+ => => transferring context: 2B                           0.0s
+ => [internal] load metadata for docker.io/library/open  10.4s
+ => [1/4] FROM docker.io/library/openjdk:11@sha256:99b  193.3s
+ => => resolve docker.io/library/openjdk:11@sha256:99bac  0.2s
+ => => sha256:e81b7f317654b0f26d3993e014 1.79kB / 1.79kB  0.0s
+ => => sha256:001c52e26ad57e3b25b439e 55.00MB / 55.00MB  15.9s
+ => => sha256:99bac5bf83633e3c7399aed725 1.04kB / 1.04kB  0.0s
+ => => sha256:47a932d998b743b9b0bcce55aa 6.26kB / 6.26kB  0.0s
+ => => sha256:2068746827ec1b043b571e47 10.88MB / 10.88MB  6.6s
+ => => sha256:d9d4b9b6e964657da49910b495 5.16MB / 5.16MB  7.7s
+ => => sha256:9daef329d35093868ef75ac 54.58MB / 54.58MB  22.0s
+ => => sha256:d85151f15b6683b98f21c3827 5.42MB / 5.42MB  16.0s
+ => => sha256:66223a710990a0ae7162aeed80417 213B / 213B  16.3s
+ => => sha256:db38d58ec8ab4111b072f 202.07MB / 202.07MB  90.6s
+ => => extracting sha256:001c52e26ad57e3b25b439ee0052f6  77.9s
+ => => extracting sha256:d9d4b9b6e964657da49910b495173d  19.7s
+ => => extracting sha256:2068746827ec1b043b571e4788693ea  2.9s
+ => => extracting sha256:9daef329d35093868ef75ac8b7c6eb  24.1s
+ => => extracting sha256:d85151f15b6683b98f21c3827ac5451  1.6s
+ => => extracting sha256:66223a710990a0ae7162aeed80417d3  0.0s
+ => => extracting sha256:db38d58ec8ab4111b072f6700f978a  42.0s
+ => [internal] load build context                         0.2s
+ => => transferring context: 581B                         0.1s
+ => [2/4] WORKDIR /usr/src/myapp                          1.3s
+ => [3/4] COPY . /usr/src/myapp/                          0.3s
+ => ERROR [4/4] RUN javac Test.java                      36.2s
+------
+ > [4/4] RUN javac Test.java:
+35.92 Test.java:5: error: cannot find symbol
+35.92         properties properties = System.getProperties();
+35.92         ^
+35.92   symbol:   class properties
+35.92   location: class Test
+35.99 1 error
+------
+Dockerfile:7
+--------------------
+   5 |     COPY . /usr/src/myapp/
+   6 |
+   7 | >>> RUN javac Test.java
+   8 |
+   9 |     CMD [ "java" , "Test" ]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c javac Test.java" did not complete successfully: exit code: 1
+PS C:\Docker\java-project> docker build -t myjavaimage .
+[+] Building 14.0s (8/8) FINISHED               docker:default
+ => [internal] load build definition from Dockerfile      0.2s
+ => => transferring dockerfile: 154B                      0.0s
+ => [internal] load .dockerignore                         0.1s
+ => => transferring context: 2B                           0.0s
+ => [internal] load metadata for docker.io/library/openj  5.6s
+ => [internal] load build context                         0.1s
+ => => transferring context: 458B                         0.1s
+ => [1/4] FROM docker.io/library/openjdk:11@sha256:99bac  0.0s
+ => CACHED [2/4] WORKDIR /usr/src/myapp                   0.0s
+ => [3/4] COPY . /usr/src/myapp/                          0.3s
+ => ERROR [4/4] RUN javac Test.java                       7.3s
+------
+ > [4/4] RUN javac Test.java:
+6.981 Test.java:5: error: cannot find symbol
+6.981         Properties properties = System.getProperties();
+6.981         ^
+6.981   symbol:   class Properties
+6.981   location: class Test
+7.109 1 error
+------
+Dockerfile:7
+--------------------
+   5 |     COPY . /usr/src/myapp/
+   6 |
+   7 | >>> RUN javac Test.java
+   8 |
+   9 |     CMD [ "java" , "Test" ]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c javac Test.java" did not complete successfully: exit code: 1
+PS C:\Docker\java-project> docker build -t myjavaimage .
+[+] Building 27.7s (9/9) FINISHED               docker:default
+ => [internal] load build definition from Dockerfile      0.2s
+ => => transferring dockerfile: 154B                      0.1s
+ => [internal] load .dockerignore                         0.1s
+ => => transferring context: 2B                           0.0s
+ => [internal] load metadata for docker.io/library/openj  3.3s
+ => [1/4] FROM docker.io/library/openjdk:11@sha256:99bac  0.0s
+ => [internal] load build context                         0.2s
+ => => transferring context: 599B                         0.2s
+ => CACHED [2/4] WORKDIR /usr/src/myapp                   0.0s
+ => [3/4] COPY . /usr/src/myapp/                          0.3s
+ => [4/4] RUN javac Test.java                            20.3s
+ => exporting to image                                    2.4s
+ => => exporting layers                                   2.3s
+ => => writing image sha256:2cde85b8b5c00bd0ad43bf6dd6f8  0.0s
+ => => naming to docker.io/library/myjavaimage            0.1s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations →
+ docker scout quickview
+PS C:\Docker\java-project> docker images
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+myjavaimage     latest    2cde85b8b5c0   28 seconds ago   654MB
+myubuntuimage   latest    fbbe4d8f8e10   2 hours ago      125MB
+mysql           latest    73246731c4b0   2 weeks ago      619MB
+python          latest    fc7a60e86bae   4 weeks ago      1.02GB
+nginx           latest    d453dd892d93   2 months ago     187MB
+httpd           latest    6fd77d7e5eb7   2 months ago     167MB
+hello-world     latest    d2c94e258dcb   8 months ago     13.3kB
+PS C:\Docker\java-project> docker run --name javaProject myjavaimage
+Java Program Started...
+PS C:\Docker\java-project>

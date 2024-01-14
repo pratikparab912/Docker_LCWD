@@ -1,0 +1,87 @@
+// dockerfile in vs code
+# this is base image
+FROM ubuntu
+
+# authour name
+MAINTAINER pratik
+
+# update command
+RUN apt update
+
+# start up executable
+CMD ["echo","this is my first ubuntu image"]
+
+// powershell command
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Docker\ubuntu-images> code .
+PS C:\Docker\ubuntu-images> code .
+PS C:\Docker\ubuntu-images> docker build -t myUbuntuImage .
+[+] Building 0.0s (0/0)                         docker:default
+ERROR: invalid tag "myUbuntuImage": repository name must be lowercase
+PS C:\Docker\ubuntu-images> docker build -t myubuntuimage .
+[+] Building 53.3s (5/5) FINISHED               docker:default
+ => [internal] load .dockerignore                         0.3s
+ => => transferring context: 2B                           0.0s
+ => [internal] load build definition from Dockerfile      0.4s
+ => => transferring dockerfile: 135B                      0.1s
+ => [internal] load metadata for docker.io/library/ubun  19.0s
+ => [1/2] FROM docker.io/library/ubuntu@sha256:6042500c  26.6s
+ => => resolve docker.io/library/ubuntu@sha256:6042500cf  0.2s
+ => => sha256:bbf3d1baa208b7649d1d0264ef7d52 424B / 424B  0.0s
+ => => sha256:174c8c134b2a94b5bb0b37d9a2 2.30kB / 2.30kB  0.0s
+ => => sha256:a486411936734b0d1d201c8 29.55MB / 29.55MB  11.0s
+ => => sha256:6042500cf4b44023ea1894effe 1.13kB / 1.13kB  0.0s
+ => => extracting sha256:a486411936734b0d1d201c8a0ed8e9  12.2s
+ => ERROR [2/2] RUN apt-update                            5.7s
+------
+ > [2/2] RUN apt-update:
+2.233 /bin/sh: 1: apt-update: not found
+------
+Dockerfile:5
+--------------------
+   3 |     MAINTAINER pratik
+   4 |
+   5 | >>> RUN apt-update
+   6 |
+   7 |     CMD ["echo","this is my first ubuntu image"]
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-update" did not complete successfully: exit code: 127
+PS C:\Docker\ubuntu-images> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+mysql         latest    73246731c4b0   2 weeks ago    619MB
+python        latest    fc7a60e86bae   4 weeks ago    1.02GB
+nginx         latest    d453dd892d93   2 months ago   187MB
+httpd         latest    6fd77d7e5eb7   2 months ago   167MB
+hello-world   latest    d2c94e258dcb   8 months ago   13.3kB
+PS C:\Docker\ubuntu-images> docker build -t myubuntuimage .
+[+] Building 309.4s (6/6) FINISHED              docker:default
+ => [internal] load .dockerignore                         0.1s
+ => => transferring context: 2B                           0.0s
+ => [internal] load build definition from Dockerfile      0.1s
+ => => transferring dockerfile: 135B                      0.1s
+ => [internal] load metadata for docker.io/library/ubunt  1.6s
+ => CACHED [1/2] FROM docker.io/library/ubuntu@sha256:60  0.0s
+ => [2/2] RUN apt update                                306.6s
+ => exporting to image                                    0.5s
+ => => exporting layers                                   0.5s
+ => => writing image sha256:fbbe4d8f8e109887e111cf28a583  0.0s
+ => => naming to docker.io/library/myubuntuimage          0.1s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations →
+ docker scout quickview
+PS C:\Docker\ubuntu-images> docker images
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+myubuntuimage   latest    fbbe4d8f8e10   18 seconds ago   125MB
+mysql           latest    73246731c4b0   2 weeks ago      619MB
+python          latest    fc7a60e86bae   4 weeks ago      1.02GB
+nginx           latest    d453dd892d93   2 months ago     187MB
+httpd           latest    6fd77d7e5eb7   2 months ago     167MB
+hello-world     latest    d2c94e258dcb   8 months ago     13.3kB
+PS C:\Docker\ubuntu-images> docker run --name myUbuntuContainer myubuntuimage
+this is my first ubuntu image
+PS C:\Docker\ubuntu-images>

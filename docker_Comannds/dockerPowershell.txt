@@ -1,0 +1,953 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Docker> docker -v
+Docker version 24.0.7, build afdd53b
+PS C:\Docker> docker pull openjdk
+Using default tag: latest
+latest: Pulling from library/openjdk
+197c1adcd755: Pull complete
+57b698b7af4b: Pull complete
+95a27dbe0150: Pull complete
+Digest: sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b3f1f
+Status: Downloaded newer image for openjdk:latest
+docker.io/library/openjdk:latest
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview openjdk
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker pull openjdk:18
+18: Pulling from library/openjdk
+Digest: sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b3f1f
+Status: Downloaded newer image for openjdk:18
+docker.io/library/openjdk:18
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview openjdk:18
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker pull python
+Using default tag: latest
+latest: Pulling from library/python
+bc0734b949dc: Pull complete
+b5de22c0f5cd: Pull complete
+917ee5330e73: Pull complete
+b43bd898d5fb: Pull complete
+7fad4bffde24: Pull complete
+d685eb68699f: Pull complete
+107007f161d0: Pull complete
+02b85463d724: Pull complete
+Digest: sha256:3733015cdd1bd7d9a0b9fe21a925b608de82131aa4f3d397e465a1fcb545d36f
+Status: Downloaded newer image for python:latest
+docker.io/library/python:latest
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview python
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+python        latest    fc7a60e86bae   4 weeks ago     1.02GB
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker search MySQL
+NAME                            DESCRIPTION
+                  STARS     OFFICIAL   AUTOMATED
+mysql                           MySQL is a widely used, open-source relation…   14748     [OK]
+mariadb                         MariaDB Server is a high performing open sou…   5628      [OK]
+percona                         Percona Server is a fork of the MySQL relati…   623       [OK]
+phpmyadmin                      phpMyAdmin - A web interface for MySQL and M…   922       [OK]
+bitnami/mysql                   Bitnami MySQL Docker Image                      105                  [OK]
+bitnami/mysqld-exporter
+                  6
+cimg/mysql
+                  2
+ubuntu/mysql                    MySQL open source fast, stable, multi-thread…   55
+rapidfort/mysql                 RapidFort optimized, hardened image for MySQL   25
+rapidfort/mysql8-ib             RapidFort optimized, hardened image for MySQ…   9
+google/mysql                    MySQL server for Google Compute Engine          25                   [OK]
+rapidfort/mysql-official        RapidFort optimized, hardened image for MySQ…   9
+hashicorp/mysql-portworx-demo
+                  0
+elestio/mysql                   Mysql, verified and packaged by Elestio         0
+bitnamicharts/mysql
+                  0
+newrelic/mysql-plugin           New Relic Plugin for monitoring MySQL databa…   1                    [OK]
+databack/mysql-backup           Back up mysql databases to... anywhere!         105
+linuxserver/mysql               A Mysql container, brought to you by LinuxSe…   41
+mirantis/mysql
+                  0
+linuxserver/mysql-workbench
+                  54
+vitess/mysqlctld                vitess/mysqlctld
+                  1                    [OK]
+eclipse/mysql                   Mysql 5.7, curl, rsync                          1                    [OK]
+drupalci/mysql-5.5              https://www.drupal.org/project/drupalci         3                    [OK]
+drupalci/mysql-5.7              https://www.drupal.org/project/drupalci         0
+datajoint/mysql                 MySQL image pre-configured to work smoothly …   2                    [OK]
+PS C:\Docker> docker search nginx
+NAME                                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+nginx                                             Official build of Nginx.                        19436     [OK]
+unit                                              Official build of NGINX Unit: Universal Web …   20        [OK]
+nginxinc/nginx-unprivileged                       Unprivileged NGINX Dockerfiles                  140
+nginx/nginx-ingress                               NGINX and  NGINX Plus Ingress Controllers fo…   87
+nginx/nginx-prometheus-exporter                   NGINX Prometheus Exporter for NGINX and NGIN…   33
+nginxinc/nginx-s3-gateway                         Authenticating and caching gateway based on …   3
+nginx/unit                                        This repository is retired, use the Docker o…   64
+nginx/nginx-ingress-operator                      NGINX Ingress Operator for NGINX and NGINX P…   2
+nginxinc/amplify-agent                            NGINX Amplify Agent docker repository           1
+nginx/nginx-quic-qns                              NGINX QUIC interop                              1
+nginxinc/ingress-demo                             Ingress Demo                                    4
+nginxproxy/nginx-proxy                            Automated nginx proxy for Docker containers …   121
+nginxproxy/acme-companion                         Automated ACME SSL certificate generation fo…   127
+bitnami/nginx                                     Bitnami nginx Docker Image                      181                  [OK]
+bitnami/nginx-ingress-controller                  Bitnami Docker Image for NGINX Ingress Contr…   32                   [OK]
+ubuntu/nginx                                      Nginx, a high-performance reverse proxy & we…   104
+nginxinc/nginmesh_proxy_debug
+                                    0
+nginxproxy/docker-gen                             Generate files from docker container meta-da…   14
+nginxinc/mra-fakes3
+                                    0
+kasmweb/nginx                                     An Nginx image based off nginx:alpine and in…   6
+nginxinc/ngx-rust-tool
+                                    0
+nginxinc/mra_python_base
+                                    0
+rancher/nginx-ingress-controller
+                                    11
+nginxinc/nginmesh_proxy_init
+                                    0
+rancher/nginx-ingress-controller-defaultbackend
+                                    2
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+python        latest    fc7a60e86bae   4 weeks ago     1.02GB
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker run python
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Docker> docker ps -a
+CONTAINER ID   IMAGE         COMMAND     CREATED          STATUS                      PORTS     NAMES
+9308bbbfc484   python        "python3"   25 seconds ago   Exited (0) 15 seconds ago             gallant_northcutt
+1b95b1eefcdb   hello-world   "/hello"    58 minutes ago   Exited (0) 58 minutes ago             cool_beaver
+PS C:\Docker> docker run --name pythonContainer -d fc7a60e86bae
+431aeb9cf2ba13430e1aed25852070681034ddec6c582132feef048bcc33fa1f
+PS C:\Docker> docker ps -a
+CONTAINER ID   IMAGE          COMMAND     CREATED
+STATUS                         PORTS     NAMES
+431aeb9cf2ba   fc7a60e86bae   "python3"   24 seconds ago      Exited (0) 21 seconds ago                pythonContainer
+9308bbbfc484   python         "python3"   4 minutes ago       Exited (0) 4 minutes ago                 gallant_northcutt
+1b95b1eefcdb   hello-world    "/hello"    About an hour ago   Exited (0) About an hour ago             cool_beaver
+PS C:\Docker> docker run --name pythonContainer1 -it -d python
+
+ae6f5c85cbaf8e65a1407dda591d1617992103416f88d5011996585b3bb2d890
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND     CREATED          STATUS          PORTS     NAMES
+ae6f5c85cbaf   python    "python3"   28 seconds ago   Up 20 seconds             pythonContainer1
+PS C:\Docker> docker exec -it ae6f5c85cbaf python3
+Python 3.12.1 (main, Dec 19 2023, 20:14:15) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("this is testing")
+this is testing
+>>> class Test :
+... pass
+  File "<stdin>", line 2
+    pass
+    ^
+IndentationError: expected an indented block after class definition on line 1
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+PS C:\Docker> docker inspect ae6f5c85cbaf
+[
+    {
+        "Id": "ae6f5c85cbaf8e65a1407dda591d1617992103416f88d5011996585b3bb2d890",
+        "Created": "2024-01-06T07:09:21.432381821Z",
+        "Path": "python3",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1421,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-01-06T07:09:29.524904917Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:fc7a60e86baeb42215d3f91f262880a3a9b4efd00c91f6597e65d9e1c7745ec9",
+        "ResolvConfPath": "/var/lib/docker/containers/ae6f5c85cbaf8e65a1407dda591d1617992103416f88d5011996585b3bb2d890/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ae6f5c85cbaf8e65a1407dda591d1617992103416f88d5011996585b3bb2d890/hostname",
+        "HostsPath": "/var/lib/docker/containers/ae6f5c85cbaf8e65a1407dda591d1617992103416f88d5011996585b3bb2d890/hosts",
+        "LogPath": "/var/lib/docker/containers/ae6f5c85cbaf8e65a1407dda591d1617992103416f88d5011996585b3bb2d890/ae6f5c85cbaf8e65a1407dda591d1617992103416f88d5011996585b3bb2d890-json.log",
+        "Name": "/pythonContainer1",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                31,
+                62
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/b29c70e17eb7653c68d284f0b3b1f8b943cfbb4909bbea844b1a081163abb85c-init/diff:/var/lib/docker/overlay2/58382b66830c9dc1cd4d051a5d7dc4646afac222d71f80bf5fab8ee6506c00ee/diff:/var/lib/docker/overlay2/d73e964acddabaf90228d314da9cbe765e84852f268e662ef27ac78590110f7e/diff:/var/lib/docker/overlay2/d85a86e9e049ea16136527f88c786dd8303270168f9ed84a01620c0e6837f944/diff:/var/lib/docker/overlay2/b8a5b606030543b4406a75603eb6017b3497d51121a8b0ff55de4076f159ff7e/diff:/var/lib/docker/overlay2/ab29ed7ab64775b3fc285c55536aaf3ad2a35cfdda83ac18234c4578c724438d/diff:/var/lib/docker/overlay2/99b6d108d7683fd22dda7c4a2a4483de0ec75fb728595525416bd01af3e9bef9/diff:/var/lib/docker/overlay2/77105c50dd38297f1e60455f4a34c61160aadcc0e217a2e8f74061e36fd69ab5/diff:/var/lib/docker/overlay2/fa08390324a8f55f9906e2674300698ce67135ae14c75f08d057fd327849dee6/diff",
+                "MergedDir": "/var/lib/docker/overlay2/b29c70e17eb7653c68d284f0b3b1f8b943cfbb4909bbea844b1a081163abb85c/merged",
+                "UpperDir": "/var/lib/docker/overlay2/b29c70e17eb7653c68d284f0b3b1f8b943cfbb4909bbea844b1a081163abb85c/diff",
+                "WorkDir": "/var/lib/docker/overlay2/b29c70e17eb7653c68d284f0b3b1f8b943cfbb4909bbea844b1a081163abb85c/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "ae6f5c85cbaf",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.1",
+                "PYTHON_PIP_VERSION=23.2.1",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4cfa4081d27285bda1220a62a5ebf5b4bd749cdb/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=9cc01665956d22b3bf057ae8287b035827bfd895da235bcea200ab3b811790b6"
+            ],
+            "Cmd": [
+                "python3"
+            ],
+            "Image": "python",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "4f096b4a047a9b38a36c975178c04a8d23cad99dc8fd850f1a4e64123a27c378",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {},
+            "SandboxKey": "/var/run/docker/netns/4f096b4a047a",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "af437a2be4b8278d677b8fa509bf9f929dd516fae5f641c4c94e87a7e7874f95",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "NetworkID": "c2362a87aa15f25c693ae4b2383eeb6d26877c710a1781a2e9c6b074cbea1ed3",
+                    "EndpointID": "af437a2be4b8278d677b8fa509bf9f929dd516fae5f641c4c94e87a7e7874f95",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND     CREATED         STATUS         PORTS     NAMES
+ae6f5c85cbaf   python    "python3"   5 minutes ago   Up 4 minutes             pythonContainer1
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+python        latest    fc7a60e86bae   4 weeks ago     1.02GB
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker run --name javaContainer -it -d openjdk
+0b53991a2870cc50b75ec60f7ab85312ebf33a7313ab69c3924117f7326bd8f2
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND     CREATED         STATUS         PORTS     NAMES
+0b53991a2870   openjdk   "jshell"    8 seconds ago   Up 6 seconds             javaContainer
+ae6f5c85cbaf   python    "python3"   6 minutes ago   Up 6 minutes             pythonContainer1
+PS C:\Docker> docker exec -it javaContainer jshll
+OCI runtime exec failed: exec failed: unable to start container process: exec: "jshll": executable file not found in $PATH: unknown
+PS C:\Docker> docker exec -it javaContainer jshell
+|  Welcome to JShell -- Version 18.0.2.1
+|  For an introduction type: /help intro
+
+jshell> System.out.println("This is testing")
+This is testing
+
+jshell> String str = "a2b"
+str ==> "a2b"
+
+jshell> str.length()
+$3 ==> 3
+
+jshell> str.toUpperCase()
+$4 ==> "A2B"
+
+jshell> 1+65
+$5 ==> 66
+
+jshell> /history
+
+System.out.println("This is testing")
+String str = "a2b"
+str.length()
+str.toUpperCase()
+1+65
+/history
+
+jshell> /exit
+|  Goodbye
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND     CREATED         STATUS         PORTS     NAMES
+0b53991a2870   openjdk   "jshell"    3 minutes ago   Up 3 minutes             javaContainer
+ae6f5c85cbaf   python    "python3"   9 minutes ago   Up 9 minutes             pythonContainer1
+PS C:\Docker> docker pull mysql
+Using default tag: latest
+latest: Pulling from library/mysql
+bce031bc522d: Pull complete
+cf7e9f463619: Pull complete
+105f403783c7: Pull complete
+878e53a613d8: Pull complete
+2a362044e79f: Pull complete
+6e4df4f73cfe: Pull complete
+69263d634755: Pull complete
+fe5e85549202: Pull complete
+5c02229ce6f1: Pull complete
+7320aa32bf42: Pull complete
+Digest: sha256:4ef30b2c11a3366d7bb9ad95c70c0782ae435df52d046553ed931621ea36ffa5
+Status: Downloaded newer image for mysql:latest
+docker.io/library/mysql:latest
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview mysql
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+mysql         latest    73246731c4b0   2 weeks ago     619MB
+python        latest    fc7a60e86bae   4 weeks ago     1.02GB
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker run --name mysqlDb -e MYSQL_ROOT_PASSWORD=12345678 -d mysql
+f0926d3b59927ada73283f25df0ffbe5093d2107b86048f2d516498ec112f684
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                 NAMES
+f0926d3b5992   mysql     "docker-entrypoint.s…"   36 seconds ago   Up 17 seconds   3306/tcp, 33060/tcp   mysqlDb
+0b53991a2870   openjdk   "jshell"                 12 minutes ago   Up 12 minutes                         javaContainer
+ae6f5c85cbaf   python    "python3"                18 minutes ago   Up 18 minutes                         pythonContainer1
+PS C:\Docker> docker inspect mysqlDb
+[
+    {
+        "Id": "f0926d3b59927ada73283f25df0ffbe5093d2107b86048f2d516498ec112f684",
+        "Created": "2024-01-06T07:27:42.074261604Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "mysqld"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2617,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-01-06T07:28:00.751966819Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:73246731c4b01c19b8713c6408c6c5d898ac04f75f2a4ce998930f12091542f2",
+        "ResolvConfPath": "/var/lib/docker/containers/f0926d3b59927ada73283f25df0ffbe5093d2107b86048f2d516498ec112f684/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/f0926d3b59927ada73283f25df0ffbe5093d2107b86048f2d516498ec112f684/hostname",
+        "HostsPath": "/var/lib/docker/containers/f0926d3b59927ada73283f25df0ffbe5093d2107b86048f2d516498ec112f684/hosts",
+        "LogPath": "/var/lib/docker/containers/f0926d3b59927ada73283f25df0ffbe5093d2107b86048f2d516498ec112f684/f0926d3b59927ada73283f25df0ffbe5093d2107b86048f2d516498ec112f684-json.log",
+        "Name": "/mysqlDb",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                31,
+                62
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/358927d46fbf921a2e048db9946a517a42be768895492cf616252902f050fe8a-init/diff:/var/lib/docker/overlay2/0e1ccddd46c3791e70836353c1bc1d4da35b824d5726f537638b647eda3d1e62/diff:/var/lib/docker/overlay2/46717511a51e39baeb5d4208a9574b73c04d35b587e8a01e169b664ede1a0fbc/diff:/var/lib/docker/overlay2/03ed3d46d40f706444944e51effdaa8664fc5af5ad20b1f6552a8adf449b02f7/diff:/var/lib/docker/overlay2/1b81edc453f3e5aa9195d251e5fc725f75d2c14349ac46f8238653cbdae66d87/diff:/var/lib/docker/overlay2/af2ce255a711365827304d3be479dfd447c0fe3441aa641b847f978e41527c31/diff:/var/lib/docker/overlay2/c823578126bdcefe2089994fcb21b4046840ae1eef752fa5faec9dba0b40fd52/diff:/var/lib/docker/overlay2/aa7d0d2b9c48d4fe640f990bb994f553045bb2f4209ac29bd4fc9364ee6ecdcc/diff:/var/lib/docker/overlay2/367722f55178f5095cae9f9010168becd54c29879ecc2b1dd8d7d0ff97523502/diff:/var/lib/docker/overlay2/5ccbdc01216534dcaba6b0ceaa5a43809d15a5cc8539835bfcc08aef62ca8420/diff:/var/lib/docker/overlay2/77d577e3c821f718cfce566c777c66ae73231cc059c110967d8981405319f04c/diff",
+                "MergedDir": "/var/lib/docker/overlay2/358927d46fbf921a2e048db9946a517a42be768895492cf616252902f050fe8a/merged",
+                "UpperDir": "/var/lib/docker/overlay2/358927d46fbf921a2e048db9946a517a42be768895492cf616252902f050fe8a/diff",
+                "WorkDir": "/var/lib/docker/overlay2/358927d46fbf921a2e048db9946a517a42be768895492cf616252902f050fe8a/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "2e8bc4fc0b9fe7d66dc27ae33fd2ef412f154e99df748db488bf40850d4a2d7a",
+                "Source": "/var/lib/docker/volumes/2e8bc4fc0b9fe7d66dc27ae33fd2ef412f154e99df748db488bf40850d4a2d7a/_data",
+                "Destination": "/var/lib/mysql",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "f0926d3b5992",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3306/tcp": {},
+                "33060/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MYSQL_ROOT_PASSWORD=12345678",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.16",
+                "MYSQL_MAJOR=innovation",
+                "MYSQL_VERSION=8.2.0-1.el8",
+                "MYSQL_SHELL_VERSION=8.2.1-1.el8"
+            ],
+            "Cmd": [
+                "mysqld"
+            ],
+            "Image": "mysql",
+            "Volumes": {
+                "/var/lib/mysql": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "d321bd95d0220a7fc59985001a791bedd4fd894076b11cbaffe7e0ff666e0c55",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "3306/tcp": null,
+                "33060/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/d321bd95d022",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "db1bf19a6aad9cf0ce31fcab9f1a00987153db8d792e655801cc47211ef105fc",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.4",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:04",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:04",
+                    "NetworkID": "c2362a87aa15f25c693ae4b2383eeb6d26877c710a1781a2e9c6b074cbea1ed3",
+                    "EndpointID": "db1bf19a6aad9cf0ce31fcab9f1a00987153db8d792e655801cc47211ef105fc",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.4",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+PS C:\Docker> docker exec -t mtsqlDb bash
+Error response from daemon: No such container: mtsqlDb
+PS C:\Docker> docker exec -it mysqlDb bash
+bash-4.4# mysql -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.2.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.54 sec)
+
+mysql> create database mydb;
+Query OK, 1 row affected (0.11 sec)
+
+mysql> use mydb;
+Database changed
+mysql> create table test(id int);
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_mydb |
++----------------+
+| test           |
++----------------+
+1 row in set (0.03 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydb               |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.05 sec)
+
+mysql> exit
+Bye
+bash-4.4# exit
+exit
+PS C:\Docker> docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+af107e978371: Pull complete
+336ba1f05c3e: Pull complete
+8c37d2ff6efa: Pull complete
+51d6357098de: Pull complete
+782f1ecce57d: Pull complete
+5e99d351b073: Pull complete
+7b73345df136: Pull complete
+Digest: sha256:2bdc49f2f8ae8d8dc50ed00f2ee56d00385c6f8bc8a8b320d0a294d9e3b49026
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview nginx
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+mysql         latest    73246731c4b0   2 weeks ago     619MB
+python        latest    fc7a60e86bae   4 weeks ago     1.02GB
+nginx         latest    d453dd892d93   2 months ago    187MB
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker run --name nginxServer -d -p 8080:80 nginx
+e6e9550f8d48b1efc5e35cdec94f3dcf039a36545ded7b912c94f707225857bb
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+e6e9550f8d48   nginx     "/docker-entrypoint.…"   48 seconds ago   Up 10 seconds   0.0.0.0:8080->80/tcp   nginxServer
+f0926d3b5992   mysql     "docker-entrypoint.s…"   9 minutes ago    Up 8 minutes    3306/tcp, 33060/tcp    mysqlDb
+0b53991a2870   openjdk   "jshell"                 21 minutes ago   Up 21 minutes                          javaContainer
+ae6f5c85cbaf   python    "python3"                27 minutes ago   Up 27 minutes                          pythonContainer1
+PS C:\Docker> docker pull httpd
+Using default tag: latest
+latest: Pulling from library/httpd
+af107e978371: Already exists
+eba4da411ea0: Pull complete
+4f4fb700ef54: Pull complete
+ed4d6291a6c2: Pull complete
+b42c390e1de9: Pull complete
+eafe388a0bb8: Pull complete
+Digest: sha256:f0a93744d8006e6f7ee5086c9ddccdcfa33d1091f15269a00547b4c382459c1f
+Status: Downloaded newer image for httpd:latest
+docker.io/library/httpd:latest
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview httpd
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+mysql         latest    73246731c4b0   2 weeks ago     619MB
+python        latest    fc7a60e86bae   4 weeks ago     1.02GB
+nginx         latest    d453dd892d93   2 months ago    187MB
+httpd         latest    6fd77d7e5eb7   2 months ago    167MB
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker run --name httpdServer -d -p 8081:80 httpd
+752a33060586b3578608976a36bf9f5909b30709a73c6f75374b93f22a892845
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+752a33060586   httpd     "httpd-foreground"       41 seconds ago   Up 16 seconds   0.0.0.0:8081->80/tcp   httpdServer
+e6e9550f8d48   nginx     "/docker-entrypoint.…"   5 minutes ago    Up 5 minutes    0.0.0.0:8080->80/tcp   nginxServer
+f0926d3b5992   mysql     "docker-entrypoint.s…"   14 minutes ago   Up 13 minutes   3306/tcp, 33060/tcp    mysqlDb
+0b53991a2870   openjdk   "jshell"                 26 minutes ago   Up 26 minutes                          javaContainer
+ae6f5c85cbaf   python    "python3"                32 minutes ago   Up 32 minutes                          pythonContainer1
+PS C:\Docker> docker stop pythonContainer1
+pythonContainer1
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+752a33060586   httpd     "httpd-foreground"       2 minutes ago    Up 2 minutes    0.0.0.0:8081->80/tcp   httpdServer
+e6e9550f8d48   nginx     "/docker-entrypoint.…"   7 minutes ago    Up 7 minutes    0.0.0.0:8080->80/tcp   nginxServer
+f0926d3b5992   mysql     "docker-entrypoint.s…"   16 minutes ago   Up 15 minutes   3306/tcp, 33060/tcp    mysqlDb
+0b53991a2870   openjdk   "jshell"                 28 minutes ago   Up 28 minutes                          javaContainer
+PS C:\Docker> docker stop 0b53991a2870
+0b53991a2870
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+752a33060586   httpd     "httpd-foreground"       3 minutes ago    Up 2 minutes    0.0.0.0:8081->80/tcp   httpdServer
+e6e9550f8d48   nginx     "/docker-entrypoint.…"   8 minutes ago    Up 7 minutes    0.0.0.0:8080->80/tcp   nginxServer
+f0926d3b5992   mysql     "docker-entrypoint.s…"   16 minutes ago   Up 16 minutes   3306/tcp, 33060/tcp    mysqlDb
+PS C:\Docker> docker stop f092
+f092
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                  NAMES
+752a33060586   httpd     "httpd-foreground"       4 minutes ago   Up 3 minutes   0.0.0.0:8081->80/tcp   httpdServer
+e6e9550f8d48   nginx     "/docker-entrypoint.…"   9 minutes ago   Up 8 minutes   0.0.0.0:8080->80/tcp   nginxServer
+PS C:\Docker> docker stop e6
+e6
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND              CREATED
+STATUS         PORTS                  NAMES
+752a33060586   httpd     "httpd-foreground"   5 minutes ago   Up 4 minutes   0.0.0.0:8081->80/tcp   httpdServer
+PS C:\Docker> docker stop 75
+75
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Docker> docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                          PORTS     NAMES
+752a33060586   httpd          "httpd-foreground"       5 minutes ago    Exited (0) 22 seconds ago                 httpdServer
+e6e9550f8d48   nginx          "/docker-entrypoint.…"   10 minutes ago   Exited (0) 43 seconds ago                 nginxServer
+f0926d3b5992   mysql          "docker-entrypoint.s…"   19 minutes ago   Exited (0) About a minute ago             mysqlDb
+0b53991a2870   openjdk        "jshell"                 31 minutes ago   Exited (143) 2 minutes ago                javaContainer
+ae6f5c85cbaf   python         "python3"                37 minutes ago   Exited (137) 3 minutes ago                pythonContainer1
+431aeb9cf2ba   fc7a60e86bae   "python3"                39 minutes ago   Exited (0) 39 minutes ago                 pythonContainer
+9308bbbfc484   python         "python3"                43 minutes ago   Exited (0) 43 minutes ago                 gallant_northcutt
+1b95b1eefcdb   hello-world    "/hello"                 2 hours ago      Exited (0) 2 hours ago                    cool_beaver
+PS C:\Docker> docker rm 75
+75
+PS C:\Docker> docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                          PORTS     NAMES
+e6e9550f8d48   nginx          "/docker-entrypoint.…"   11 minutes ago   Exited (0) About a minute ago             nginxServer
+f0926d3b5992   mysql          "docker-entrypoint.s…"   19 minutes ago   Exited (0) 2 minutes ago                  mysqlDb
+0b53991a2870   openjdk        "jshell"                 32 minutes ago   Exited (143) 3 minutes ago                javaContainer
+ae6f5c85cbaf   python         "python3"                38 minutes ago   Exited (137) 4 minutes ago                pythonContainer1
+431aeb9cf2ba   fc7a60e86bae   "python3"                40 minutes ago   Exited (0) 39 minutes ago                 pythonContainer
+9308bbbfc484   python         "python3"                44 minutes ago   Exited (0) 43 minutes ago                 gallant_northcutt
+1b95b1eefcdb   hello-world    "/hello"                 2 hours ago      Exited (0) 2 hours ago                    cool_beaver
+PS C:\Docker> docker rm e6 f0 0b ae
+e6
+f0
+0b
+ae
+PS C:\Docker> docker ps -a
+CONTAINER ID   IMAGE          COMMAND     CREATED          STATUS                      PORTS     NAMES
+431aeb9cf2ba   fc7a60e86bae   "python3"   41 minutes ago   Exited (0) 41 minutes ago             pythonContainer
+9308bbbfc484   python         "python3"   45 minutes ago   Exited (0) 45 minutes ago             gallant_northcutt
+1b95b1eefcdb   hello-world    "/hello"    2 hours ago      Exited (0) 2 hours ago                cool_beaver
+PS C:\Docker> docker rm 43 93 1b
+43
+93
+1b
+PS C:\Docker> docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+mysql         latest    73246731c4b0   2 weeks ago     619MB
+python        latest    fc7a60e86bae   4 weeks ago     1.02GB
+nginx         latest    d453dd892d93   2 months ago    187MB
+httpd         latest    6fd77d7e5eb7   2 months ago    167MB
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+openjdk       latest    71260f256d19   11 months ago   470MB
+PS C:\Docker> docker rmi openjdk
+Untagged: openjdk:latest
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+mysql         latest    73246731c4b0   2 weeks ago     619MB
+python        latest    fc7a60e86bae   4 weeks ago     1.02GB
+nginx         latest    d453dd892d93   2 months ago    187MB
+httpd         latest    6fd77d7e5eb7   2 months ago    167MB
+hello-world   latest    d2c94e258dcb   8 months ago    13.3kB
+openjdk       18        71260f256d19   11 months ago   470MB
+PS C:\Docker> docker images openjdk:18
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+openjdk      18        71260f256d19   11 months ago   470MB
+PS C:\Docker> docker rmi openjdk:18
+Untagged: openjdk:18
+Untagged: openjdk@sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b3f1f
+Deleted: sha256:71260f256d19f4ae5c762601e5301418d2516ca591103b1376f063be0b7ba056
+Deleted: sha256:47e38970bbdeed3c53a02995da4b5472f885d2e02a327e3bada6027f9506b1ee
+Deleted: sha256:7d9436acccd4d14ca79fb09a4573fe353d70a0485b25e7ef0fcfae2b90ba88cc
+Deleted: sha256:9cd9df9ffc972e9abc946d855162ef0c40dff9a89f10c962b7920154a3d943d8
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+mysql         latest    73246731c4b0   2 weeks ago    619MB
+python        latest    fc7a60e86bae   4 weeks ago    1.02GB
+nginx         latest    d453dd892d93   2 months ago   187MB
+httpd         latest    6fd77d7e5eb7   2 months ago   167MB
+hello-world   latest    d2c94e258dcb   8 months ago   13.3kB
+PS C:\Docker> docker run --name pythonContainer -t python
+Python 3.12.1 (main, Dec 19 2023, 20:14:15) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+
+PS C:\Docker> docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+mysql         latest    73246731c4b0   2 weeks ago    619MBpython        latest    fc7a60e86bae   4 weeks ago    1.02GB
+nginx         latest    d453dd892d93   2 months ago   187MBhttpd         latest    6fd77d7e5eb7   2 months ago   167MBhello-world   latest    d2c94e258dcb   8 months ago   13.3kB
+PS C:\Docker> docker stop B
+Error response from daemon: No such container: B
+PS C:\Docker> docker rmi B
+Error response from daemon: invalid reference format: repository name must be lowercase
+PS C:\Docker> docker run --name pythonContainer -it -d python
+docker: Error response from daemon: Conflict. The container name "/pythonContainer" is already in use by container "f3e5cc9535ee3ff485902b9b86ba6fe041fc87884cccf79e8e34653e81048232". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+PS C:\Docker> docker ps -a
+CONTAINER ID   IMAGE     COMMAND     CREATED          STATUS          PORTS     NAMES
+f3e5cc9535ee   python    "python3"   13 minutes ago   Up 13 minutes             pythonContainer
+PS C:\Docker> docker restart pythonContainer
+pythonContainer
+PS C:\Docker> docker stop pythonContainer
+pythonContainer
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Docker> docker restart pythonContainer1
+Error response from daemon: No such container: pythonContainer1
+PS C:\Docker> docker restart pythonContainer
+pythonContainer
+PS C:\Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND     CREATED          STATUS         PORTS     NAMES
+f3e5cc9535ee   python    "python3"   16 minutes ago   Up 6 seconds             pythonContainer
+PS C:\Docker> docker logs pythonContainer
+Python 3.12.1 (main, Dec 19 2023, 20:14:15) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+KeyboardInterrupt
+>>>
+KeyboardInterrupt
+>>> Python 3.12.1 (main, Dec 19 2023, 20:14:15) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> Python 3.12.1 (main, Dec 19 2023, 20:14:15) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+PS C:\Docker>
